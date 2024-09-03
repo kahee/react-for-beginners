@@ -1,11 +1,20 @@
-import Button from './Button';
-import styles from './App.module.css';
-import { useState, useEffect } from 'react';
-import { keyboard } from '@testing-library/user-event/dist/keyboard';
 import Movie from './components/Movie';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './routes/Home';
+import Detail from './routes/Detail';
 
+// hashrouter 사용시 /#/movie 이런식으로 됨
+// brouserRouter 사용시 /movie
 function App() {
-  return null;
+  return (
+    // Routes 한번에 하나씩 렌더링을 원
+    <Router>
+      <Routes>
+        <Route path="/movie" element={<Detail />}></Route>
+        <Route path="/" element={<Home />}></Route>
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

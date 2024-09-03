@@ -1,23 +1,23 @@
+import { useEffect, useState } from 'react';
+import Movie from '../components/Movie';
+
 function Home() {
-  const [loading, setLoding] = useState(true);
-  const [movies, setMovice] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [movies, setMovies] = useState([]);
   const getMovies = async () => {
     const json = await (
       await fetch(
-        'https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year'
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year`
       )
     ).json();
-    setMovice(json.data.movies);
-    setLoding(false);
+    setMovies(json.data.movies);
+    setLoading(false);
   };
-
   useEffect(() => {
     getMovies();
   }, []);
-  // https://api.coinpaprika.com/v1/tickers
   return (
     <div>
-      <h1>The Coins</h1>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
@@ -36,5 +36,4 @@ function Home() {
     </div>
   );
 }
-
 export default Home;
