@@ -10,7 +10,7 @@ function App() {
     // Routes 한번에 하나씩 렌더링을 원
     <Router>
       <Routes>
-        <Route path="/movie" element={<Detail />}></Route>
+        <Route path="/movie/:id" element={<Detail />}></Route>
         <Route path="/" element={<Home />}></Route>
       </Routes>
     </Router>
