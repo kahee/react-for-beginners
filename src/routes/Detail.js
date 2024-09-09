@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Movie from '../components/Movie';
+import MovieDetail from '../components/MovieDetail';
 
 // useParams :id 를 받을 수 있음
 function Detail() {
@@ -26,12 +26,11 @@ function Detail() {
 
   return (
     <div>
-      <Movie
+      <MovieDetail
         key={movie.id}
         id={movie.id}
         coverImg={movie.medium_cover_image}
         title={movie.title}
-        summary={movie.summary}
         genres={movie.genres}
       />
     </div>

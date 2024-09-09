@@ -2,6 +2,7 @@ import Movie from './components/Movie';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './routes/Home';
 import Detail from './routes/Detail';
+import './styles.css';
 
 // hashrouter 사용시 /#/movie 이런식으로 됨
 // brouserRouter 사용시 /movie
