@@ -8,7 +8,7 @@ import Detail from './routes/Detail';
 function App() {
   return (
     // Routes 한번에 하나씩 렌더링을 원
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/movie/:id" element={<Detail />}></Route>
         <Route path="/" element={<Home />}></Route>
